@@ -1,0 +1,83 @@
+
+--------------------OBJECTS------------------------------
+GENERAL:
+    Properties:
+        -Captains
+    Methods:
+        -run() - should activate all Creep generation in rooms
+
+CAPTAIN:
+    Properties:
+        -rooms(Screeps object)
+        -ConstructionSites
+        -energySources
+        -totalAvailableEnergy
+        -controller
+        -roomToAttack
+        -callingForReinforcements
+        -isUnderAttack
+        -safeModeAvailable
+        -creepBalance - how to determine?
+        -roomLevel
+            -Should change based on controller level or potential energy available
+
+    Methods:
+        -activateSafeMode()
+        -callForReinforcements()
+        -generateScreeps()
+            -Should determine how many of each type to create
+        -attackRoom()
+        -DefendRoom()
+
+CREEP:
+    Properties:
+        -Name
+        -Role
+        -isWorking
+        -CurrentRoom
+        -TargetRoom
+    
+    Methods:
+        -harvest()
+        -upgrade()
+        -build()
+        -Repair()
+            -Should be able to specify whether walls/ramparts are included
+        -Attack()
+        -Defend()
+
+        Sub-Objects:
+        -CreepHarvester
+        -CreepUpgrader
+        -CreepBuilder
+        -CreepRepairman
+        -CreepWallRepairman
+        -CreepGuardian
+        -CreepRaider
+        -CreepDiplomat
+        -CreepScout
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

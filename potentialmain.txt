@@ -1,0 +1,25 @@
+
+
+
+
+
+/*
+TODO:
+-Wallrepairerspawning
+*/
+
+import General;
+import Captain;
+import Creep;
+
+module.exports.loop = function() {
+
+for (room in Game.rooms) {
+    let theCaptain = new Captain (room);
+    General.set(Game.rooms[room].name,theCaptain);)
+}
+
+
+}
+
+

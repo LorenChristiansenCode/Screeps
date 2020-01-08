@@ -1,0 +1,68 @@
+
+
+Requirements:
+
+
+--------------------ROOMS------------------------------
+
+-Each room should be able to get stats on how many Creeps(of which type).
+-Each room should be able to spawn Creeps based on the balance of Creeps in the room.
+-Constructions sites will be built by the user for now
+-A room should be able to call for Guardians from other rooms when it is under attack
+
+
+
+--------------------CREEPS------------------------------
+
+Different Types of Creeps:
+-Harvester: At early room levels, harvests energy from sources in the room. In mature rooms, harvesters should be able to carry huge amounts of resources 
+    at the expense of the MOVE ability. Links should be constructed at each source, with one harvesters assigned to each link. A small number of harvesters
+    will remain near the areas of the room where energy is stored(Spawn, extensions, storage, etc.). These structures should be near to the spawn to preserve 
+    efficiency. One harvester will collect energy from a source and transfer to a link. The harvesters near energy storage structures will take energy from
+    the appropriate link and transfer to energy storage structures.
+-Upgrader: Harvests energy from sources in the room and upgrades the controller. In mature rooms, should pull energy from StructureStorage.
+-Builder: Harvests energy from sources in the room. In mature rooms, harvests energy from StructureStorage. Transfers
+    energy to constructions sites in the room.
+-Repairman: Harvests energy from sources in the room. In mature rooms, harvests energy from the closest available source. Uses energy to repair stuctures,
+    excluding walls. 
+-Wall Repairman: Harvests energy from sources in the room. In mature rooms, harvests energy from the closest available source. Uses energy to repair walls,
+    starting with the wall with the least amount of hit points compared to other walls in the room.
+-Guardian: Stays in it's home room and attacks enemy creeps. Blocks openings in the walls where applicable. Shouldn't be spawned until enemies are detected.
+-Raider: A pair of Creeps, one to attack, one to heal. Attacking creep should have plenty of armor, and one type of attack. Healer should have a large 
+    amount of armor and healing abilities. Both should have the same moving capability. Recommended to send two Raiders; one with ranged attack to attack 
+    creeps behind structures, and one with close ranged attack to destory structures.
+-Diplomat: Lightweight creep optimized for speed. Needs the ability to claim controllers.
+-Scout: Explores a room marked for attack
+
+Creep spawning should be controlled by the Room Captain. 
+
+
+
+--------------------EXPANSION------------------------------
+
+A console command should be able to trigger an attack on another room. A source room and target room should be specified in the command.
+Attack logic:
+    -A lightweight, fast creep should be sent to the room if it isn't currently visible. 
+    -If not inhabited by hostile creeps, a Diplomat should be sent to claim the target room's controller.
+    -If hostile creeps are detected, stats should be returned on the Owner's GCL and other appropriate strength indicators. If the Owner is deemed weak enough
+        to attack, Raiders should be created for an attack. Logic should be created to determine how many(and what kind of) Raiders should be created based on 
+        # of defensive structures, wall strength, # of hostile creeps, # of creeps with defensive abilities, etc.
+    -Once all defensive structures/creeps have been destroyed, the controller should be attacked. 
+    -When the controller is sufficiently weak(or close to it), a Diplomat should be released to claim the controller
+    -Special transportation harvesters(or maybe another kind of creep altogether) should be responsible for bringing one time resources to the room once it has 
+        been captured to quickly boost the growth of the room in preparation for a counter-attack. Emphasis should be put on upgrading the controller until 
+        extensions can be created to allow for strong Guardians to be spawned. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
